@@ -59,13 +59,16 @@ describe('template spec', () => {
     .should('be.visible')
     //trading stragy
     cy.get('.underline-hover').click()
+    //cross button
     cy.get('#form-dialog-title button').click({force:true})
+    //notifications 
     cy.get(':nth-child(5) > img')
     .should('be.visible')
     .click()
+    //cross button
     cy.get('#form-dialog-title button')
     .click({force:true})
-    cy.get('.MuiAvatar-img').click()
+    //disclaimer
     cy.get('[href="/disclaimer"]').click({force:true})
     cy.get('.css-1sowyjy > .MuiTypography-root')
     .should('have.text','DISCLAIMERS')
@@ -75,6 +78,8 @@ describe('template spec', () => {
     .should('have.text','Omissions, Errors, or Mistakes Disclaimer. All information on this website is accurate and true to the best of the Company’s knowledge, but that there may be omissions, errors or mistakes. The Company is not liable for any damages due to any errors or omissions on the website, delay or denial of any products, failure of performance of any kind, interruption in the operation and your use of the website, website attacks including computer virus, hacking of information, and any other system failures or misuse of information or products.')
     cy.get(':nth-child(4) > .MuiTypography-root')
     .should('have.text','No Professional-Client Relationship. Your use of the content on this site or content from our email list is at your own risk. The Company does not guarantee any results from using this content and is for educational purposes only. It is your responsibility to do your own research, consult, and obtain a professional that you may need for your situation.')
-    
-  })
+    //profile
+    cy.get('.MuiAvatar-img').click()
+    cy.get('li.MuiButtonBase-root').click()
+})
 })
